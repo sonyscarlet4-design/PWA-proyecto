@@ -1,0 +1,133 @@
+/* Estilos Generales con Acentos Naranja (Estilo Goku Ejecutivo) */
+* {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f1f5f9; 
+    color: #1e293b; 
+    padding: 10px;
+}
+
+/* 1. Adaptabilidad Móvil y marco centrado para PC */
+.pwa-container {
+    width: 100%;
+    max-width: 768px; 
+    margin: 0 auto; 
+    background: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    overflow: hidden; 
+    border-top: 4px solid #f97316; /* Acento Naranja Ejecutivo */
+}
+
+/* En monitores de escritorio (>1025px) simula un smartphone centrado */
+@media (min-width: 1025px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #0f172a;
+    }
+    .pwa-container {
+        border: 8px solid #1e293b;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+header {
+    background: #0f172a; 
+    color: #fff; 
+    padding: 16px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 2px solid #f97316;
+}
+
+.menu-toggle {
+    background: none; 
+    border: none; 
+    color: #f97316; 
+    font-size: 26px; 
+    cursor: pointer;
+}
+
+/* 2. Menú Hamburguesa Desplegable */
+.nav-menu {
+    display: none; 
+    background: #1e293b; 
+    padding: 10px 20px; 
+    border-bottom: 1px solid #334155;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu ul li {
+    padding: 8px 0; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-menu ul li a {
+    color: #cbd5e1; 
+    text-decoration: none; 
+    font-size: 14px; 
+}
+
+.nav-menu ul li a:hover {
+    color: #f97316;
+}
+
+/* Secciones y Formularios */
+.filter-section {
+    padding: 20px;
+}
+
+.filter-section select, .filter-section input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.item-card {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Enfoque naranja interactivo */
+select:focus, input:focus, textarea:focus {
+    outline: none; 
+    border-color: #f97316; 
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Mensajes de Validación y Alertas de Éxito */
+.error-msg { 
+    color: #ef4444; 
+    font-size: 12px; 
+    display: none; 
+    margin-top: -10px; 
+    margin-bottom: 10px; 
+}
+
+.success-alert { 
+    background: #22c55e; 
+    color: white; 
+    padding: 10px; 
+    text-align: center; 
+    display: none; 
+    border-radius: 6px; 
+    margin-bottom: 15px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configuración Viewport obligatoria para PWA y adaptabilidad móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portafolio PWA - luciana</title>
+    
+    <!-- Hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Script de detección avanzada para todo tipo de dispositivos -->
+    <script>
+        const anchoPantalla = window.innerWidth;
+        const ua = navigator.userAgent;
+
+        if (/Android|iPhone|iPod/i.test(ua)) {
+            console.log("Dispositivo detectado: Smartphone / Móvil (Modo PWA Táctil)");
+        } else if (/iPad|Tablet/i.test(ua) || (anchoPantalla >= 768 && anchoPantalla <= 1024)) {
+            console.log("Dispositivo detectado: Tablet (Modo PWA Adaptativo)");
+        } else if (anchoPantalla > 1024 && anchoPantalla <= 1440) {
+            console.log("Dispositivo detectado: Laptop o Escritorio Estándar (Modo Simulación PWA)");
+        } else if (anchoPantalla > 1440) {
+            console.log("Dispositivo detectado: Monitor Grande / Escritorio Ultrawide (Modo Escritorio)");
+        } else {
+            console.log("Dispositivo detectado: Dispositivo Genérico / Desconocido");
+        }
+    </script>
+</head>
+<body>
+
+    <div class="pwa-container">
+        <!-- Encabezado / Header -->
+        <header>
+            <div>
+                <h2>LVCB</h2>
+                <small style="color:#cbd5e1;">Portafolio PWA Oficial</small>
+            </div>
+            <button class="menu-toggle" id="hamburgerBtn">&#9776;</button>
+        </header> 
+
+        <!-- Menú Hamburguesa Desplegable -->
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#filtros">&#128269; Filtro Dinámico de 3 Capas</a></li>
+                <li><a href="#contacto">&#9993; Formulario de Contacto</a></li>
+            </ul>
+        </nav> 
+
+        <!-- Sección: Filtro Dinámico de 3 Capas -->
+        <section id="filtros" class="filter-section">
+            <h3>Filtro Dinámico de 3 Capas</h3>
+            
+            <label for="capal">Elija Área:</label>
+            <select id="capal">
+                <option value="">-- Elija Área --</option>
+                <option value="academico">Académico (UPDS)</option>
+                <option value="desarrollo">Desarrollo Software</option>
+            </select> 
+            
+            <label for="capa2">Subcategoría:</label>
+            <select id="capa2" disabled>
+                <option value="">-- Primero elija área --</option>
+            </select> 
+
+            <div style="margin-top: 15px;">
+                <div id="resultadoFiltro" class="item-card">Seleccione las capas anteriores...</div>
+            </div>
+        </section>
+
+        <!-- Sección: Formulario de Contacto con Validación -->
+        <section id="contacto" class="filter-section" style="border-top: 1px solid #e2e8f0;">
+            <h3>Formulario de Contacto</h3>
+            <div id="successAlert" class="success-alert">¡Formulario enviado con éxito!</div>
+            
+            <form id="pwaForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                <div id="errNombre" class="error-msg">Por favor, ingrese un nombre válido.</div>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="text" id="correo" placeholder="ejemplo@correo.com">
+                <div id="errCorreo" class="error-msg">Por favor, ingrese un correo electrónico válido.</div>
+
+                <button type="submit" style="background:#0f172a; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; width:100%; margin-top:5px;">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Archivo de JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
